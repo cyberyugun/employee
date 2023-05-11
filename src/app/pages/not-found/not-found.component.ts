@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+declare var anime: any;
 
 @Component({
   selector: 'app-not-found',
@@ -12,6 +13,4 @@ import { RouterModule } from '@angular/router';
     CommonModule
   ]
 })
-export default class NotFoundComponent {
-
-}
+export default class NotFoundComponent {}
