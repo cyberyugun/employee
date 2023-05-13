@@ -1,27 +1,37 @@
-# Employee
+# Angular Installation
+Before installing Angular, please make sure that you have the following installed on your system:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+Angular CLI version 16.0.1
+Node.js version 18.10.0
+npm package manager version 8.19.2
+To install Angular, you can use the following command:
 
-## Development server
+`npm install -g @angular/cli@16.0.1`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This will install Angular CLI globally on your system.
 
-## Code scaffolding
+After that, run `npm install` to install the required dependencies for your Angular project. Once the installation is complete, you can start the development server by running `ng serve` or `npm run start` command in your terminal. This will compile your project and serve it on `http://localhost:4200/`. You can then open your web browser and navigate to this URL to view your Angular application in action.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Environment
 
-## Build
+The application has two local environments: development and staging, both of which can be accessed at `http://localhost:4200`. To switch between the two environments, simply modify the `environment.prod.ts` file in the `src/environments` folder, respectively.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+In addition to the local environments, the application is also deployed to a production environment, which can be accessed at `https://inspiring-tanuki-6c7233.netlify.app`. This environment is automatically built and deployed whenever a new commit is pushed to the main branch on GitHub.
 
-## Running unit tests
+To build the application for production, run the following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`npm run build-production`
 
-## Running end-to-end tests
+This will compile the application and generate a set of static files in the `dist\employee` folder, which can then be uploaded to a hosting provider or served using a static file server.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+For more information on how to develop and deploy Angular applications, please refer to the Angular documentation or the community.
 
-## Further help
+# Admin Login
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To access the admin panel, please use the following credentials:
+
+Username: admin
+Password: P@ssw0rd
+
+These credentials are case-sensitive and should be used for demonstration purposes only. It is recommended that you change the username and password before deploying your application to a production environment to ensure security.
+
