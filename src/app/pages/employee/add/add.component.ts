@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { CustomDateFormat } from 'src/app/helper/directive/custom-date-format';
 import * as moment from 'moment';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-add',
@@ -31,7 +32,8 @@ import * as moment from 'moment';
     MatDatepickerModule,
     DatePickerFormatModule,
     MatNativeDateModule,
-    ConvertCurrencyInputDirectiveModule
+    ConvertCurrencyInputDirectiveModule,
+    MatSelectModule
   ],
   providers: [
     {

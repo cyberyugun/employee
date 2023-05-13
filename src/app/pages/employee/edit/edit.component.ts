@@ -7,6 +7,7 @@ import { MatNativeDateModule, DateAdapter, MAT_DATE_FORMATS } from '@angular/mat
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import * as moment from 'moment';
 import { ConvertCurrencyInputDirectiveModule } from 'src/app/helper/directive/convert-currency-input.module';
@@ -31,7 +32,8 @@ import { EmployeeEditUsecase } from 'src/app/helper/usecase/employee/edit.usecas
     MatDatepickerModule,
     DatePickerFormatModule,
     MatNativeDateModule,
-    ConvertCurrencyInputDirectiveModule
+    ConvertCurrencyInputDirectiveModule,
+    MatSelectModule
   ],
   providers: [
     {

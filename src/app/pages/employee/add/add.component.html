@@ -58,9 +58,9 @@
         <div class="w-100 mb-5">
           <mat-form-field appearance="outline">
             <mat-label>Group</mat-label>
-            <select matNativeControl formControlName="group" required>
-              <option *ngFor="let item of groupList" [value]="item.group">{{item.group}}</option>
-            </select>
+            <mat-select matNativeControl formControlName="group" required>
+              <mat-option *ngFor="let item of groupList" [value]="item.group">{{item.group}}</mat-option>
+            </mat-select>
             <mat-error *ngIf="errorValidator(addForm.controls.group.errors, 'required')">Group is required</mat-error>
           </mat-form-field>
         </div>
