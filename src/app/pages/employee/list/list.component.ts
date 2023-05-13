@@ -65,6 +65,7 @@ export default class ListComponent implements OnInit {
     if (data.length > 0) {
       this.list = data;
       this.list = this.filterData(this.list, params);
+      this.router.navigateByUrl('/employee/add', {skipLocationChange: true}).then(() => this.router.navigate(['/employee']));
     }
   }
 
