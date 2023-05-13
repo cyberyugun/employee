@@ -1,1 +1,42 @@
-<p>list works!</p>
+<div>
+  <div class="mb-5">
+    <div class="flex flex-wrap justify-content-between">
+      <form [formGroup]="filterForm" (ngSubmit)="getData()">
+        <div class="flex flex-wrap">
+          <div class="w-20 me-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username" autocomplete="email">
+            </mat-form-field>
+          </div>
+          <div class="w-20 me-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" autocomplete="email">
+            </mat-form-field>
+          </div>
+          <div class="mb-4">
+            <button type="submit" class="btn btn-primary ms-auto w-60">
+              Filter
+            </button>
+          </div>
+        </div>
+      </form>
+      <div>
+        <button class="btn btn-dark ms-auto w-60" routerLink="/employee/add">Add Employee</button>
+      </div>
+    </div>
+  </div>
+  <app-table
+    [page]="pagenum"
+    [count]="count"
+    [datasource]="list"
+    [headerType]="headerType"
+    [displayedcolumns]="displayedColumns"
+    [headerTitle]="headerTitle"
+    [width]="width"
+    (LinkAction)="LinkAction($event)"
+    (actionDelete)="DeleteAction($event)"
+    (actionEdit)="EditAction($event)">
+  </app-table>
+</div>

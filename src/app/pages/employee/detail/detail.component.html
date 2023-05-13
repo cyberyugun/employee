@@ -1,1 +1,62 @@
-<p>detail works!</p>
+<div class="card" *ngIf="user">
+  <div class="card-body">
+    <h1 class="fs-4 card-title fw-bold mb-4">Detail Employee</h1>
+    <div>
+      <div class="mb-3">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="mt-3">
+            <h2 class="card-title">Username</h2>
+            <p class="card-text">{{user.username}}</p>
+          </div>
+          <div class="mt-3">
+            <h2 class="card-title">First Name</h2>
+            <p class="card-text">{{user.firstName}}</p>
+          </div>
+          <div class="mt-3">
+            <h2 class="card-title">Last Name</h2>
+            <p class="card-text">{{user.lastName}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="mt-3">
+            <h2 class="card-title">Email</h2>
+            <p class="card-text">{{user.email}}</p>
+          </div>
+          <div class="mt-3">
+            <h2 class="card-title">Birth Date</h2>
+            <p class="card-text">{{user.birthDate}}</p>
+          </div>
+          <div class="mt-3">
+            <h2 class="card-title">Salary</h2>
+            <p class="card-text">Rp. {{convert(user.basicSalary)}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="mt-3">
+            <h2 class="card-title">Status</h2>
+            <p class="card-text">{{user.status}}</p>
+          </div>
+          <div class="mt-3">
+            <h2 class="card-title">Group</h2>
+            <p class="card-text">{{user.group}}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="mt-3">
+            <h2 class="card-title">Description</h2>
+            <p class="card-text">{{user.description}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <button class="btn btn-danger ms-auto w-100" routerLink="/employee">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

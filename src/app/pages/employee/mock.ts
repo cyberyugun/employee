@@ -1,0 +1,10 @@
+export const group = [{"id":1,"group":"upward-trending"},
+{"id":2,"group":"application"},
+{"id":3,"group":"object-oriented"},
+{"id":4,"group":"tangible"},
+{"id":5,"group":"customer loyalty"},
+{"id":6,"group":"Polarised"},
+{"id":7,"group":"bottom-line"},
+{"id":8,"group":"Multi-lateral"},
+{"id":9,"group":"encryption"},
+{"id":10,"group":"dedicated"}]

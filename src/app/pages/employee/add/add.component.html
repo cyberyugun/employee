@@ -1,1 +1,83 @@
-<p>add works!</p>
+<div class="card">
+  <div class="card-body">
+    <h1 class="fs-4 card-title fw-bold mb-4">Add Employee</h1>
+    <div>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit(addForm)">
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.username.errors, 'required')">Username is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.firstName.errors, 'required')">First Name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.lastName.errors, 'required')">Last Name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.email.errors, 'required')">Email is required</mat-error>
+            <mat-error *ngIf="errorValidator(addForm.controls.email.errors, 'invalidEmail') && !errorValidator(addForm.controls.email.errors, 'required')">8+ characters, 1 uppercase, 1 lowercase, 1 number, may have special characters</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a Birth Date</mat-label>
+            <input matInput formControlName="birthDate" datePickerFormat="DD MMMM YYYY" [max]="maxChooseDatePicker()" [matDatepicker]="picker" (click)="picker.open()" readonly>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-error *ngIf="errorValidator(addForm.controls.birthDate.errors, 'required')">Birth Date is required</mat-error>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Salary</mat-label>
+            <input matInput appMycurrency formControlName="basicSalary" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.basicSalary.errors, 'required')">Salary is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput formControlName="status" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.status.errors, 'required')">Status is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Group</mat-label>
+            <select matNativeControl formControlName="group" required>
+              <option *ngFor="let item of groupList" [value]="item.group">{{item.group}}</option>
+            </select>
+            <mat-error *ngIf="errorValidator(addForm.controls.group.errors, 'required')">Group is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="w-100 mb-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" autocomplete="email">
+            <mat-error *ngIf="errorValidator(addForm.controls.description.errors, 'required')">Description is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <button class="btn btn-success ms-auto w-100" type="submit" [disabled]="!addForm.valid">Save</button>
+        </div>
+      </form>
+      <div class="mt-5">
+        <button class="btn btn-danger ms-auto w-100" routerLink="/employee">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

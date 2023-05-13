@@ -10,6 +10,10 @@ export const employeeRoutes: Route[] = [
     loadComponent: () => import('./detail/detail.component'),
   },
   {
+    path: 'edit/:id',
+    loadComponent: () => import('./edit/edit.component'),
+  },
+  {
     path: 'add',
     loadComponent: () => import('./add/add.component'),
   }
