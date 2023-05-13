@@ -50,9 +50,6 @@ export class StoreService {
   editEmployees(user: UserData) {
     let arr = this.employees.getValue();
     const index = arr.findIndex(data => data.id === user.id);
-    console.log(arr);
-    console.log(user);
-
     const data: UserData = {
       username: user.username,
       firstName: user.firstName,
