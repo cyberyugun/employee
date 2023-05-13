@@ -56,10 +56,15 @@ export default class ListComponent implements OnInit {
   }
 
   DeleteAction(event: UserData) {
+    const params: filterUser = {
+      username: (this.filterForm.controls.username.value) ?? '',
+      email: (this.filterForm.controls.email.value) ?? ''
+    }
     this.storeService.deleteEmployees(event);
     const data = this.storeService.employees.getValue();
     if (data.length > 0) {
       this.list = data;
+      this.list = this.filterData(this.list, params);
     }
   }
 
