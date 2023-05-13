@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://localhost:4200'
+  apiUrl: 'https://inspiring-tanuki-6c7233.netlify.app'
 };
